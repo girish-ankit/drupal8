@@ -57,7 +57,7 @@ class AddContactForm extends FormBase {
     }
 
     public function validateForm(array &$form, FormStateInterface $form_state) {
-	if (strlen($form_state->getValue('name')) < 0) {
+	if (strlen($form_state->getValue('name')) < 1) {
 	    $form_state->setErrorByName('name', $this->t('Name is required field'));
 	}
 	if (strlen($form_state->getValue('message')) < 10) {
