@@ -65,8 +65,23 @@ class ContactStorageService {
 	return $query->execute();
     }
 
+    public function update($id, $name, $message) {
+	if (empty($name) || empty($message) || empty($id)) {
+	    return FALSE;
+	}
+	// Example of working with DB in Drupal 8.
+	$query = $this->database->update('custom_contact');
+	$query->fields(array(
+	    'name' => $name,
+	    'message' => $message,
+	));
+	$query->condition('id', $id);
+
+	return $query->execute();
+    }
+
     function delete($id) {
-	$this->database->insert('custom_contact')->condition('id', $id)->execute();
+	$this->database->delete('custom_contact')->condition('id', $id)->execute();
     }
 
 }

@@ -24,12 +24,19 @@ class AddContactForm extends FormBase {
 	if ($path_args[5]) {
 	    $db_logic = \Drupal::service('custom_form.db_logic');
 	    $data = $db_logic->getById($path_args[5]);
+	    $id_default_value = $data[0]->id;
 	    $name_default_value = $data[0]->name;
 	    $message_default_value = $data[0]->message;
 	} else {
+	    $id_default_value = '';
 	    $name_default_value = '';
 	    $message_default_value = '';
 	}
+
+	$form['id'] = array(
+	    '#type' => 'hidden',
+	    '#value' => $id_default_value,
+	);
 
 	$form['name'] = array(
 	    '#type' => 'textfield',
@@ -59,13 +66,21 @@ class AddContactForm extends FormBase {
     }
 
     public function submitForm(array &$form, FormStateInterface $form_state) {
-
+	$db_logic = \Drupal::service('custom_form.db_logic');
+	$id = $form_state->getValue('id');
 	$name = $form_state->getValue('name');
 	$message = $form_state->getValue('message');
+	$i = 0;
+	if ($id) {
+	    $i = 1;
+	    $db_logic->update($id, $name, $message);
+	} else {
+	    $i = 1;
+	    $db_logic->add($name, $message);
+	}
 
-	$db_logic = \Drupal::service('custom_form.db_logic');
 
-	if ($db_logic->add($name, $message)) {
+	if ($i == 1) {
 	    drupal_set_message('Contact form has been submited');
 	    $url = Url::fromRoute('custom_form.list');
 	    $form_state->setRedirectUrl($url);
