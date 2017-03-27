@@ -1,7 +1,9 @@
 <h2>{{ page_title }}</h2>
+
 {#
  How to comment in twig tempate engine
 #}
+
  
 <ul>
 
@@ -15,5 +17,19 @@
    
 {% endfor %}
 
-<ul>
+</ul>
+
+
+
+{% set company_name = 'hytech' %}
+{{ company_name }} {# outputs ‘bar’ #}
+<br />
+{{ company_name|title }} {# outputs ‘Bar’ #}
+<br />
+
+{% set emp = {'id': 123, 'name': 'Raju'} %}
+{{ emp.name }} {# outputs ‘foo’ #}
+<br />
+{{ emp['name'] }} {# outputs ‘foo’ #}
+<br />
 
