@@ -1,14 +1,15 @@
 <h2>Contact Form Template</h2>
  
  <form {{form.attributes }}>
-                    {{ form.form_build_id }}
-                    {{ form.form_token }}
-                    {{ form.form_id }}
-                    {{ form.name }}
-                    {{ form.message }}
-                    {{ form.id }}
+        {{ form.form_build_id }}
+        {{ form.form_token }}
+        {{ form.form_id }}
+                    
+        {{ form.name }}
+        {{ form.message }}
+        {{ form.id }}
 
-                    <div class="actions">
-                        {{ form.actions.submit }}
-                    </div>
-                </form>
+        <div class="actions">
+        {{ form.actions.submit }}
+        </div>
+</form>
