@@ -25,6 +25,7 @@ class FirstController extends ControllerBase {
 	return array(
 	    '#theme' => 'demo_template',
 	    '#test_var' => $users,
+	    '#page_title' => 'This is title of the page',
 	);
     }
 
