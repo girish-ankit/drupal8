@@ -1,0 +1,16 @@
+<p>Test twig template!</p>
+ 
+<ul>
+
+{% for user in test_var %}
+    {% if user.age < 15 %}
+	  <li>  {{user.name}} is {{ user.age}} years Kid. </li>
+    {% else %}
+    <li>  {{user.name}} is {{ user.age}} years Man. </li>
+{% endif %}
+    
+   
+{% endfor %}
+
+<ul>
+
