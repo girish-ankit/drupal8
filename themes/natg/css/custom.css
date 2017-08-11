@@ -1,0 +1,1146 @@
+﻿body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Open Sans', sans-serif;
+	color: #858585;
+	font-size: 14px;
+}
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+.navbar .logo {
+    margin-right: 0;
+    padding-left: 20px;
+}
+.headerTop{
+margin: 0px;
+    padding: 16px 0px;
+    background: #fff;
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    z-index: 11;
+    }
+.topSec{
+	float:right;
+}
+.topSec .region-header-top{
+	float:left;
+}
+.headerTop ul.menu.nav{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: inline-block;
+    float:left
+    }
+.headerTop ul.menu.nav li{
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    }
+.headerTop ul.menu.nav li a{
+    margin: 0px;
+    padding: 0px 10px;
+    color: #555555;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    }
+.headerTop ul.menu.nav li a:hover, .headerTop ul.menu.nav li a:focus{
+	background:none;
+}    
+.headerTop .flag{
+	margin: 0px;
+    padding: 0px;
+    float:left;
+}
+.headerTop .flag a{
+	margin:0px 10px;
+}
+.headerTop .dropdown{
+    float: left;
+    margin:-4px 10px 0px 10px;
+    }
+.headerTop .dropdown button {
+    background: transparent;
+    border: none;
+    color: #000000;
+    font-size: 17px;
+    }
+
+.contentSection{
+	position: relative;
+    top: 900px;
+        z-index: 999;
+}
+.banner{
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    width: 100%;
+    height: 900px;
+    top: 57px;
+        }
+.bannerContent{
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 40%;
+    left:50px;
+    z-index: 1;
+    color:#fff;
+    width:50%;
+    }
+.bannerContent p{
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+    font-size: 40px;
+    font-weight: 600;	
+}
+.bannerContent span{
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+    display: block;
+    color: #000000;
+    font-size: 26px;
+    font-weight: 600;	
+}
+.bannerContent a{
+margin: 0px;
+    padding: 12px 22px;
+    background: #0060af;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    display: inline-block;
+    border-radius: 5px;
+    text-transform: uppercase;	
+}
+.banner .owl-nav .owl-prev {
+    background: transparent url("../images/left-arrow.png") no-repeat scroll 0 0 !important;
+    height: 35px;
+    left: 10px;
+    position: absolute;
+    width: 35px;
+    top: 50%;
+    margin-top: -18px;
+    transition: all 0.1s ease-in;
+    opacity: 0.5;
+}
+.banner .owl-nav .owl-prev:hover {
+    opacity: 1;
+}
+.banner .owl-nav .owl-next {
+    background: transparent url("../images/right-arrow.png") no-repeat scroll 0 0 !important;
+    height: 35px;
+    position: absolute;
+    right: 10px;
+    width: 35px;
+    top: 50%;
+    margin-top: -18px;
+    transition: all 0.1s ease-in;
+    opacity: 0.5;
+}
+.banner .owl-nav .owl-next:hover {
+    opacity: 1;
+}
+.banner .owl-controls .owl-dots {
+    margin-top: 0;
+    text-align: center;
+}
+.banner .owl-theme .owl-controls {
+    margin-top: 0;
+}
+.banner .owl-dots {
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+    width: 100%;
+    z-index: 40;
+}
+.banner .owl-theme .owl-dots .owl-dot.active span, .banner .owl-theme .owl-dots .owl-dot:hover span {
+    background: #000000;
+}
+.ourServices {
+    margin: 0px;
+    padding: 0px;
+    background: url(../images/banner.jpg) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+.heading {
+	margin: 0px;
+	padding: 40px 0px;
+	text-align: center;
+	color: #858585;
+	font-size: 16px;
+	font-weight: 400;
+}
+.heading .headingTitle {
+	margin: 0px 0px 50px 0px;
+	padding: 0px;
+	color: #0060af;
+	font-size: 30px;
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+}
+.heading .headingTitle span {
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+	position: relative;
+}
+.heading .headingTitle span:after {
+	content: "";
+	background: url(../images/heading-icon.png) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	width: 268px;
+	height: 25px;
+	position: absolute;
+	bottom: -27px;
+	left: 0px;
+	right: 0px;
+}
+.heading .headingTitle p {
+	margin: 0px;
+	padding: 0px;
+}
+.ourServices .ourServices-icon {
+	margin: 0px;
+	padding: 10px0px;
+	text-align: center;
+}
+.ourServices a.revenue {
+    color: #000000;
+    margin: 20px 0px 0px 0px;
+    padding: 112px 0px 0px 0px;
+    font-size: 22px;
+    font-weight: 600;
+    background: url(../images/revnue.png) no-repeat scroll center top rgba(0, 0, 0, 0);
+    display: block;
+    text-decoration: none;
+     transition: .2s ease;
+    }
+.airlinean{
+	    color: #000000;
+    margin: 20px 0px 0px 0px;
+    padding: 112px 0px 0px 0px;
+    font-size: 22px;
+    font-weight: 600;
+    background: url(../images/analytic.png) no-repeat scroll center top rgba(0, 0, 0, 0);
+    display: block;
+    text-decoration: none;
+     transition: .2s ease;
+
+}
+
+.airlineop{
+	  color: #000000;
+    margin: 20px 0px 0px 0px;
+    padding: 112px 0px 0px 0px;
+    font-size: 22px;
+    font-weight: 600;
+    background: url(../images/operation.png) no-repeat scroll center top rgba(0, 0, 0, 0);
+    display: block;
+    text-decoration: none;
+     transition: .2s ease;
+
+}    
+       
+.ourServices .ourServices-icon p {
+	color: #000000;
+	margin: 20px 0px 0px 0px;
+	padding: 0px;
+	font-size: 22px;
+	font-weight: 600;
+}
+.ourServices .ourServicesContent {
+	color: #77777a;
+	font-size: 16px;
+	font-weight: 400;
+	margin: 20px 0px 0px 0px;
+	text-align: center;
+	 transition: .2s ease;
+}
+.ourServices .ourServicesBox:hover{
+	background:#ff9300;
+}
+
+.ourServices .ourServicesBox ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;	
+}
+.ourServices .ourServicesBox ul li{
+	margin:0px;
+	padding:5% 0px;
+	background:#0060af;
+	width:50%;
+	float:left;	
+}
+
+.ourServices .ourServicesBox ul li:first-child{
+	border-right: 1px solid #ff9300;
+}
+
+
+.ourServices .ourServicesBox ul li a{
+    margin: 0px;
+    padding: 0px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+        }
+.ourServices .ourServicesBox:hover ul{
+	display:block;
+}
+
+
+.ourServices .ourServicesBox {
+	margin: 0px;
+	padding: 10px 0px;
+	position: relative;
+	min-height: 333px;
+	    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+
+.ourServicesBox:hover a.revenue{
+	    background: url(../images/revnue-active.png) no-repeat scroll center top rgba(0, 0, 0, 0);
+	    color:#fff;	   
+	    text-decoration:none;
+} 
+
+.ourServicesBox:hover a.airlinean{
+	    background: url(../images/analytic-active.png) no-repeat scroll center top rgba(0, 0, 0, 0);
+	    color:#fff;	   
+	    text-decoration:none;
+} 
+
+.ourServicesBox:hover a.airlineop{
+	    background: url(../images/operation-active.png) no-repeat scroll center top rgba(0, 0, 0, 0);
+	    color:#fff;	  
+	    text-decoration:none; 
+} 
+
+.ourServicesBox:hover .ourServicesContent{
+	color:#fff;
+}
+
+
+.ourServices .ourServicesBox:after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	background: #ebeef2;
+	width: 3px;
+	top: 0px;
+	left: 0px;
+}
+.noborder:after {
+	width: 0px!important;
+	background: transparent!important;
+}
+.heading .ourServiceTitle span:after {
+	content: "";
+	background: url(../images/heading-icon2.png) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	width: 222px;
+	height: 25px;
+	position: absolute;
+	bottom: -27px;
+	left: 0px;
+	right: 0px;
+}
+.ourService {
+	margin: 0px;
+	padding: 0px;
+}
+.ourService .businessProcess-title {
+	font-size: 25px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 30px 0px;
+}
+.businessProcess {
+	margin: 0px;
+	padding: 0px 100px;
+	height: 400px;
+	text-align: center;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 400;
+	display: table-cell;
+	background: url(../images/img1.jpg) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background-size: cover;
+	position: relative;
+		 transition: all 0.3s ease-in 0s;
+	  background-size: 100%;
+	      border-right: 1px solid #fff;
+
+}
+.businessProcess:hover{
+		 background-size: 110%;
+}
+.businessProcess:after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	position: absolute;
+	background: rgba(0,96,175,0.7);
+}
+.informatioTec {
+	margin: 0px;
+	padding: 0px 100px;
+	height: 400px;
+	text-align: center;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 400;
+	display: table-cell;
+	background: url(../images/img2.jpg) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background-size: cover;
+	 transition: all 0.3s ease-in 0s;
+	  background-size: 100%;
+}
+.informatioTec:hover{
+	 background-size: 110%;
+}
+
+
+.informatioTec:after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	position: absolute;
+	background: rgba(255,147,0,0.9);
+}
+.ourService .nospace {
+	padding: 0px;
+	display: table;
+}
+.ourService-Box {
+	color: #fff;
+	z-index: 9;
+	position: relative;
+}
+
+
+.ourServiceHove{
+	    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    color:red;
+	
+}
+
+.ourServiceHover ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0px;
+    right: 0px;	
+    transition: all 0.3s ease-in 0s;
+    bottom: 0px;
+}
+.ourServiceHover ul li{
+    margin: 0px;
+    padding: 3% 0px;
+    background: #0060af;
+    width: 50%;
+    float: left
+    }
+
+.ourServiceHover ul li:first-child{
+	border-right: 1px solid #ff9300;
+}
+
+
+.ourServiceHover ul li a{
+    margin: 0px;
+    padding: 0px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+            }
+.ourServiceHover:hover ul{
+	display:block;
+}
+ul.orange li{
+	background:#ff9300;
+}
+ul.orange li:first-child{
+	border-right: 1px solid #fff;
+}
+
+
+
+
+
+
+.newsSection {
+	margin: 0px;
+	padding: 0px 0px 40px 0px;
+	background: url(../images/news.jpg) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background-size: cover;
+}
+.newsSection #myCarousel {
+	margin: 0px;
+	padding: 20px 10px;
+	background: #fff;
+	position: relative;
+}
+.newsSection .newsBox {
+	margin: 0px;
+	padding: 0px;
+}
+.newsSection .newsContentSec {
+	float: left;
+	width: 70%;
+}
+.newsSection .newsContent {
+	font-size: 13px;
+	font-weight: 400;
+}
+.newsSection .newsImg {
+	float: left;
+	margin: 0px 20px 0px 0px;
+	width: 20%;
+}
+.newsSection .newsDate {
+	color: #959595;
+	font-size: 13px;
+	font-weight: 400;
+	margin: 0px 0px 10px 0px;
+	padding: 0px;
+}
+.newsSection .newsHeadign {
+	position: relative;
+	padding: 0px 0px 8px 0px;
+}
+.newsSection .newsHeadign a {
+	text-decoration: none;
+	color: #333333;
+	font-size: 18px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+.newsSection .newsHeadign:after {
+	content: "";
+	position: absolute;
+	background: #373542;
+	height: 2px;
+	width: 70px;
+	left: 0px;
+	bottom: 0px;
+}
+.newsSection .newsContentSec:hover .newsHeadign:after {
+	background: #ff6c26;
+}
+.newsSection .carousel-indicators {
+	bottom: -10px;
+}
+.newsSection .carousel-indicators li {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 1px;
+	text-indent: -999px;
+	cursor: pointer;
+	background: #363636;
+	border: 1px solid #fff;
+	border-radius: 10px;
+}
+.newsSection .carousel-indicators .active {
+	width: 12px;
+	height: 12px;
+	margin: 0;
+	background: #fff;
+	border: 1px solid #ff6c26;
+}
+.newsSection .left-btn {
+	background: #0060af;
+	color: #fff;
+	position: absolute;
+	top: 45%;
+	left: -40px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	font-size: 27px;
+	font-weight: 600;
+	border-radius: 30px;
+	line-height: 30px;
+}
+.newsSection .right-btn {
+	background: #0060af;
+	color: #fff;
+	position: absolute;
+	top: 45%;
+	right: -40px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	font-size: 27px;
+	font-weight: 600;
+	border-radius: 30px;
+	line-height: 30px;
+}
+footer {
+	margin: 0px;
+	padding: 0px;
+	background: #002646;
+}
+.footerSection {
+	margin: 0px;
+	padding: 30px 0px 30px 0px;
+	width: 100%;
+	display: table;
+}
+footer ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+footer nav {
+    padding: 30px 0px 10px 0px;
+}
+
+footer ul li.expanded {
+	float: left;
+	display: table-cell;
+	width: 14%;
+	margin-bottom: 0px;
+}
+footer ul li a {
+	color: #ff9300;
+	font-size: 18px;
+}
+footer ul li a:hover {
+	color: #ff9300;
+	text-decoration: none;
+}
+footer ul li ul li a {
+	color: #fff;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 13px;
+	text-decoration: none;
+}
+footer ul li ul li a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+footer ul li ul li {
+	margin: 14px 0px 10px 0px;
+}
+.copyright {
+	background: #01213c;
+	margin: 0px;
+	padding: 20px 0px;
+	color: #fff;
+	font-size: 12px;
+}
+.copyright .privacy a {
+	color: #fff;
+	text-decoration: none;
+	margin: 0px 10px;
+}
+.copyright .privacy a, .copyright .privacy a:hover, .copyright .privacy a:focus {
+	color: #fff;
+	text-decoration: none;
+}
+.copyright .copy {
+	color: #ff7300;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+}
+.copyright .socilaLink {
+	margin: 0px;
+	padding: 0px;
+	text-align: right;
+}
+.copyright .socilaLink a {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	font-size: 16px;
+	text-align: center;
+	font-weight: 400;
+	line-height: 30px;
+	border-radius: 30px;
+	color: #fff;
+	text-decoration: none;
+	margin: 0px 5px;	
+	-webkit-transition: all ease 0.3s;
+	-moz-transition: all ease 0.3s;
+	-o-transition: all ease 0.3s;
+	-ms-transition: all ease 0.3s;
+	transition: all ease 0.3s;
+}
+.copyright .socilaLink a:hover{
+	box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+	-webkit-transform:rotate(360deg);
+	-moz-transform:rotate(360deg);
+	-o-transform:rotate(360deg);
+	-ms-transform:rotate(360deg);
+	transform:rotate(360deg);
+}
+.fb {
+	background: #3b5998;
+}
+.twitter {
+	background: #26a6d1;
+}
+.linkedin {
+	background: #0e76a8;
+}
+.google {
+	background: #dc4e41;
+}
+.youtube {
+	background: #c4302b;
+}
+.rss {
+	background: #053851;
+}
+
+
+
+
+@media all and (min-width:320px) and (max-width:767px){
+.businessProcess{
+	border-right: transparent;
+}
+
+.headerTop{
+	display:none;
+}
+.banner{
+    top: 0px;
+    position: relative;
+    height: auto;	
+}
+.contentSection {
+    position: relative;
+    top: 0px;
+}
+.contentSection {
+    position: relative;
+    top: 0px;
+}
+.bannerContent {
+    margin: 0px auto;
+    padding: 0px;
+    position: absolute;
+    top: 9%;
+    left: 0px;
+    z-index: 1;
+    color: #fff;
+    width: 75%;
+    text-align: center;
+    right: 0px;
+}
+.bannerContent p {
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.bannerContent span {
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    display: block;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 600;
+}
+.bannerContent a {
+    margin: 0px;
+    padding: 6px 12px;
+    background: #0060af;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-block;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.banner .owl-dots {
+    display: none;
+}
+.heading{
+    padding: 10px 0px;	
+    font-size: 14px;
+}
+.ourServices .ourServicesBox:after {
+    background: transparent;
+}
+.businessProcess {
+    margin: 0px;
+    padding: 20px 10px;
+    height: auto; 
+    font-size: 14px;
+}
+.informatioTec {
+    margin: 0px;
+    padding: 20px 10px;
+    height: auto;
+    font-size: 14px;
+}
+.footerSection {
+    display: none;
+}
+.privacy{
+	text-align:center;
+}
+.copyright .socilaLink {
+    text-align: center;
+}
+.copyright .copy {
+    text-align: center;
+    margin: 10px 0px;
+}
+.newsSection .right-btn{
+	display:none;
+}
+.newsSection .left-btn{
+	display:none;
+}
+.newsSection .newsImg{
+	width:100%;
+}
+.newsSection .newsImg img{
+	width:100%;
+}
+.newsSection .newsContentSec {
+    float: left;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    }
+.ourServices .ourServicesBox{
+    margin: 0px 0px 20px 0px;	
+}
+.ourServices .ourServicesBox ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: block;
+    position: relative;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+.ourServices .ourServicesBox ul li {
+    margin: 0px;
+    padding: 10px 10px;
+    background: #0060af;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #fff;
+}
+.ourServices .ourServicesBox ul li:first-child {
+    border-right: transparent;
+}
+.ourServiceHover ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    transition: all 0.3s ease-in 0s;
+    bottom: 0px;
+}
+.ourServiceHover ul li {
+    margin: 0px;
+    padding: 10px 0px;
+    background: #0060af;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #fff;
+}
+ul.orange li:first-child {
+    border-right: transparent;
+}
+ul.orange li {
+    background: #ff9300;
+}
+
+}
+
+@media all and (min-width:768px) and (max-width:989px){
+.businessProcess{
+	border-right: transparent;
+}
+
+.headerTop{
+	display:none;
+}
+.banner{
+    top: 0px;
+    position: relative;
+    height: auto;	
+}
+.contentSection {
+    position: relative;
+    top: 0px;
+}
+.contentSection {
+    position: relative;
+    top: 0px;
+}
+.bannerContent {
+margin: 0px auto;
+    padding: 0px;
+    position: absolute;
+    top: 29%;
+    left: 0px;
+    z-index: 1;
+    color: #fff;
+    width: 75%;
+    text-align: center;
+    right: 0px;
+    }
+.bannerContent p {
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    font-size: 25px;
+    font-weight: 600;
+    }
+.bannerContent span {
+margin: 0px 0px 10px 0px;
+    padding: 0px;
+    display: block;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 600;
+    }
+.bannerContent a {
+    margin: 0px;
+    padding: 8px 12px;
+    background: #0060af;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    display: inline-block;
+    border-radius: 5px;
+    text-transform: uppercase;}
+.banner .owl-dots {
+    display: none;
+}
+.heading{
+    padding: 10px 0px;	
+    font-size: 14px;
+}
+.ourServices .ourServicesBox:after {
+    background: transparent;
+}
+.businessProcess {
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px;
+    height: auto;
+    font-size: 14px;
+    width: 100%;
+    display: block
+            }
+.informatioTec {
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    font-size: 14px;
+    width: 100%;
+    display: block;
+    }
+.footerSection {
+    display: none;
+}
+.privacy{
+	text-align:center;
+}
+.copyright .socilaLink {
+    text-align: center;
+}
+.copyright .copy {
+    text-align: center;
+    margin: 10px 0px;
+}
+.newsSection .right-btn{
+	display:none;
+}
+.ourService .nospace {
+padding: 0px;
+    display: block;}
+    
+.ourServices .ourServicesBox ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: block;
+    position: relative;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}.ourServices .ourServicesBox ul li {
+    padding: 2% 0px;
+}
+.ourServices .ourServicesBox{
+margin: 0px 0px 40px 0px;
+padding: 10px 0px;
+position: relative;
+min-height: auto;
+	
+}
+.ourServiceHover ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    transition: all 0.3s ease-in 0s;
+    bottom: 0px;
+}
+.ourServiceHover ul li {
+    margin: 0px;
+    padding: 2% 0px;
+    width: 50%;
+    float: left;
+}
+.ourService-Box {
+    color: #fff;
+    z-index: 9;
+    position: relative;
+    padding: 18px 0px;
+}
+
+
+
+
+}
+
+@media all and (min-width:1024px) and (max-width:1279px){
+.bannerContent {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 20%;
+    left: 50px;
+    z-index: 1;
+    color: #fff;
+    width: 50%;
+}
+.bannerContent p {
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.banner{
+	    height: 500px;
+}
+.contentSection {
+    position: relative;
+    top: 500px;
+}
+.newsSection .right-btn{
+	    right: 0px;
+}
+.newsSection .left-btn{
+	    left: 0px;
+}
+footer ul li a {
+    color: #ff9300;
+    font-size: 15px;
+    font-weight: 600;
+}
+footer ul li ul li a{
+	font-size:11px;
+}
+.ourServiceHover{
+	height: 420px;
+}
+.ourServices .ourServicesBox{
+	min-height: 413px;
+}
+.ourServices .ourServicesBox ul li {
+    margin: 0px;
+    padding: 5% 0px;
+    background: #0060af;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #fff;
+}
+
+}
+
+@media all and (min-width:1280px) and (max-width:1300px){
+.bannerContent{
+	    top: 30%;
+}
+.bannerContent p{
+	    font-size: 30px;
+}
+.bannerContent span{
+	    font-size: 20px;
+}
+}
+
+@media all and (min-width:1301px) and (max-width:1400px){
+.ourServices .ourServicesBox{
+min-height: 353px;	
+}
+
+.ourServices .ourServicesBox ul li a {
+    margin: 0px;
+    padding: 0px 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    display: block;
+}
+}
+
+
