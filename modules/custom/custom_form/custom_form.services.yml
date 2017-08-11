@@ -1,0 +1,12 @@
+services:
+    #Service name.
+    custom_form.db_logic:
+        # Class that renders the service.
+        #As Drupal 8 uses PSR-4 autoloader, we skip src.
+        
+        class: Drupal\custom_form\ContactStorageService
+        #// Arguments that will come to the class constructor.
+        arguments: ['@database']
+        #// A more detailed explanation: https://www.drupal.org/node/2239393.
+        tags:
+            - { name: backend_overridable }

@@ -1,0 +1,10 @@
+<?php
+
+function custom_form_theme($existing, $type, $theme, $path) {
+  return array(
+    'add_contact_form' => array(
+      'render element' => 'form',
+    ),
+  );
+}
+

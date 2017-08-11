@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implementation of hook_form_alter()
+ */
+
+
+function mymodule_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+    if('comment_comment_form' == $form_id){
+	$form['actions']['submit']['#value'] = t('Please comment !');
+    }
+
+}
+
+function mymodule_theme($existing, $type, $theme, $path) {
+  return array(
+    'demo_template' => array(
+      'variables' => array('test_var' => NULL, 'page_title'=> NULL),
+    ),
+  );
+}

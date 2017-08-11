@@ -1,0 +1,35 @@
+<h2>{{ page_title }}</h2>
+
+{#
+ How to comment in twig tempate engine
+#}
+
+ 
+<ul>
+
+{% for user in test_var %}
+    {% if user.age < 15 %}
+	  <li>  {{user.name}} is {{ user.age}} years Kid. </li>
+    {% else %}
+    <li>  {{user.name}} is {{ user.age}} years Man. </li>
+{% endif %}
+    
+   
+{% endfor %}
+
+</ul>
+
+
+
+{% set company_name = 'hytech' %}
+{{ company_name }} {# outputs ‘bar’ #}
+<br />
+{{ company_name|title }} {# outputs ‘Bar’ #}
+<br />
+
+{% set emp = {'id': 123, 'name': 'Raju'} %}
+{{ emp.name }} {# outputs ‘foo’ #}
+<br />
+{{ emp['name'] }} {# outputs ‘foo’ #}
+<br />
+
