@@ -1,0 +1,4 @@
+custom_form.list:
+    title: 'Contact Form'
+    route_name: custom_form.list
+    base_route: system.admin_content

@@ -1,0 +1,8 @@
+use contact form:
+    title: 'Use Contact Form'
+    description: 'This is permission to use contact form'
+    restrict access: true
+manage contact form:
+    title: 'Manage Contact Form'
+    description: 'This is permission to manage custom form'
+    restrict access: true

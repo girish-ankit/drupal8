@@ -1,0 +1,32 @@
+custom_form.list: 
+  path: '/admin/content/contact_form'
+  defaults: 
+    _controller: '\Drupal\custom_form\Controller\AdminController::content'
+  requirements: 
+    _permission: 'manage contact form'
+    
+custom_form.add: 
+  path: '/admin/content/contact_form/add'
+  defaults: 
+    _form: '\Drupal\custom_form\Form\AddContactForm'
+    _title: 'Create contact'
+  requirements: 
+    _permission: 'use contact form'
+    
+custom_form.edit: 
+  path: '/admin/content/contact_form/edit/{id}'
+  defaults: 
+    _form: '\Drupal\custom_form\Form\AddContactForm'
+    _title: 'Edit contact'
+  requirements: 
+    _permission: 'use contact form'
+
+ 
+custom_form.delete:
+  path: '/admin/content/custom_form/delete/{id}'
+  defaults: 
+    _form: '\Drupal\custom_form\Form\DeleteContactForm'
+    _title: 'Delete contact form'
+  requirements: 
+    _permission: 'manage contact form'
+    
