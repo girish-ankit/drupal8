@@ -24,7 +24,13 @@ custom_menu.tab_1:
   weight: 10
 
 resume.tab_2:
-  route_name: work.form
-  title: Work
+  route_name: custom_menu.ajax_validate
+  title: Ajax Form Validate
+  base_route: resume.form
+  weight: 20
+  
+resume.tab_3:
+  route_name: custom_menu.autocomplete_form
+  title: Auto Complete Form
   base_route: resume.form
   weight: 20

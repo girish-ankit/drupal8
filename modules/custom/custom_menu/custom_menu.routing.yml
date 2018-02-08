@@ -6,10 +6,26 @@ resume.form:
  requirements:
    _permission: 'access content'
 
-work.form:
-  path: 'resume/mypage'
+custom_menu.ajax_validate:
+    path: '/ajax_number_check'
+    defaults:
+        _form: '\Drupal\custom_menu\Form\AjaxExampleForm'
+        _title: 'Ajax Form Valdate'
+    requirements:
+        _permission: 'access content'
+
+custom_menu.autocomplete_form:
+    path: '/autocomplete-form'
+    defaults:
+        _form: '\Drupal\custom_menu\Form\AutocompleteForm'
+        _title: 'Auto Complete Form'
+    requirements:
+        _permission: 'access content'
+        
+custom_menu.autocomplete:
+  path: '/custom-menu-autocomplete/{field_name}/{count}'
   defaults:
-    _form: '\Drupal\custom_menu\Form\WorkForm'
-    _title: 'D8 form'
+    _controller: '\Drupal\custom_menu\Controller\AutocompleteController::handleAutocomplete'
+    _format: json
   requirements:
-    _permission: 'access content'
+    _access: 'TRUE'
