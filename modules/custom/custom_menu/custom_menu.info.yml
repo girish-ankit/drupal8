@@ -1,0 +1,5 @@
+name: Custom Menu Tab Module
+type: module
+core: '8.x'
+description: 'This module is created to show menu sytem of drupal8'
+package: Custom

@@ -1,0 +1,8 @@
+custom_menu.action:
+  route_name: mymodule.content 
+  # name of any route where you want to redirect
+  title: 'go to new form page'
+  weight: -20
+ # class: '\Drupal\custom_menu\Plugin\Menu\LocalAction\CustomLocalAction'
+  appears_on:
+    - resume.form
