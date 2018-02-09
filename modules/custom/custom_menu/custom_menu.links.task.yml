@@ -43,13 +43,13 @@ resume.tab_4:
   
 resume.tab_5:
   route_name: custom_form.model_form
-  title: Modal Popup Form
+  title: Popup Form
   base_route: resume.form
   weight: 5
 
 resume.tab_6:
   route_name: custom_form.form_load
-  title: Aajax Form Load 
+  title: Ajax Form 
   base_route: resume.form
   weight: 6
   
@@ -58,4 +58,9 @@ resume.tab_7:
   title: Dragdrop From
   base_route: resume.form
   weight: 7
+resume.tab_8:
+  route_name: custom_form.form_load
+  title: Multi-step Form 
+  base_route: resume.form
+  weight: 8
   
