@@ -1,5 +1,5 @@
 mymodule.newpage:
-    title: 'MyModule Stuff'
+    title: 'Page'
     description: 'Link to the page created'
     route_name:  mymodule.content
     # mymodule.content : defined in mymodule.routing.yml file
