@@ -8,19 +8,3 @@ mymodule.content:
     requirements:
         _permission: 'access content'
 
-mymodule.form:
-  path: '/modal_popup'
-  defaults:
-    _form: 'Drupal\mymodule\Form\ExampleForm'
-    _title: 'Modal Popup'
-  requirements:
-    _permission: 'access content'
-
-mymodule.open_modal_form:
-  path: '/modal_form'
-  defaults:
-    _title: 'Modal Form'
-    _controller: '\Drupal\mymodule\Controller\ModalFormExampleController::openModalForm'
-  requirements:
-    _permission: 'access content'
- 

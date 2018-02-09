@@ -1,5 +1,5 @@
 custom_menu.form:
-    title: 'Application form 2'
+    title: 'Forms'
     description: 'This will create a menu tab'
     route_name:  resume.form
     # resume.form : defined in mymodule.routing.yml file

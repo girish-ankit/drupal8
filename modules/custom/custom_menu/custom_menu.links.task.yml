@@ -21,16 +21,41 @@ custom_menu.tab_1:
   route_name : resume.form
   title: Resume
   base_route: resume.form
-  weight: 10
+  weight: 1
 
 resume.tab_2:
   route_name: custom_menu.ajax_validate
   title: Ajax Form Validate
   base_route: resume.form
-  weight: 20
+  weight: 2
   
 resume.tab_3:
   route_name: custom_menu.autocomplete_form
   title: Auto Complete Form
   base_route: resume.form
-  weight: 20
+  weight: 3
+  
+resume.tab_4:
+  route_name: custom_form.form_table
+  title: Tabular Form
+  base_route: resume.form
+  weight: 4
+  
+resume.tab_5:
+  route_name: custom_form.model_form
+  title: Modal Popup Form
+  base_route: resume.form
+  weight: 5
+
+resume.tab_6:
+  route_name: custom_form.form_load
+  title: Aajax Form Load 
+  base_route: resume.form
+  weight: 6
+  
+resume.tab_7:
+  route_name: custom_form.form_drag
+  title: Dragdrop From
+  base_route: resume.form
+  weight: 7
+  

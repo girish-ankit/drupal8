@@ -63,6 +63,9 @@ class AddContactForm extends FormBase {
         if (strlen($form_state->getValue('message')) < 10) {
             $form_state->setErrorByName('message', $this->t('Message  Must be greater than 10 characters'));
         }
+         if (strlen($form_state->getValue('message')) > 255) {
+            $form_state->setErrorByName('message', $this->t('Message  Must not be greater than 255 characters'));
+        }
     }
 
     public function submitForm(array &$form, FormStateInterface $form_state) {

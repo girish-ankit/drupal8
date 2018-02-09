@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\mymodule\Controller;
+namespace Drupal\custom_form\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Ajax\AjaxResponse;
@@ -51,7 +51,7 @@ class ModalFormExampleController extends ControllerBase {
     $response = new AjaxResponse();
 
     // Get the modal form using the form builder.
-    $modal_form = $this->formBuilder->getForm('Drupal\mymodule\Form\ModalForm');
+    $modal_form = $this->formBuilder->getForm('Drupal\custom_form\Form\ModalForm');
 
     // Add an AJAX command to open a modal dialog with the form as the content.
     $response->addCommand(new OpenModalDialogCommand('My Modal Form', $modal_form, ['width' => '800']));

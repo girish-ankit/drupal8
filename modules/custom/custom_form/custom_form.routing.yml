@@ -29,6 +29,47 @@ custom_form.delete:
     _title: 'Delete contact form'
   requirements: 
     _permission: 'manage contact form'
+    
+custom_form.form_table:
+    path: '/table_form'
+    defaults:
+        _form: '\Drupal\custom_form\Form\TabularForm'
+        _title: 'Tabular Form'
+    requirements:
+        _permission: 'access content'
+        
+custom_form.model_form:
+  path: '/modal_popup'
+  defaults:
+    _form: 'Drupal\custom_form\Form\ExampleForm'
+    _title: 'Modal Popup'
+  requirements:
+    _permission: 'access content'
+
+custom_form.open_modal_form:
+  path: '/modal_form'
+  defaults:
+    _title: 'Modal Form'
+    _controller: '\Drupal\custom_form\Controller\ModalFormExampleController::openModalForm'
+  requirements:
+    _permission: 'access content'
+ 
+        
+custom_form.form_drag:
+    path: '/form_drag'
+    defaults:
+        _form: '\Drupal\custom_form\Form\DragDropForm'
+        _title: 'Tabular Form'
+    requirements:
+        _permission: 'access content'
+        
+custom_form.form_load:
+    path: '/form_ajax_load'
+    defaults:
+        _form: '\Drupal\custom_form\Form\AjaxLoadForm'
+        _title: 'Ajax Load Form'
+    requirements:
+        _permission: 'access content'
  
 
     
