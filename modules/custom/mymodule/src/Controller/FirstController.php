@@ -15,7 +15,7 @@ class FirstController extends ControllerBase {
     public function content() {
 	return array(
 	    '#type' => 'markup',
-	    '#markup' => t('This is my menu linked custom page'),
+	    '#markup' => t('This is content of custom page'),
 	);
     }
 

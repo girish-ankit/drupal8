@@ -69,6 +69,11 @@ class ResumeForm extends FormBase {
             '#type' => 'checkbox',
             '#title' => t('Send me a copy of the application.'),
         );
+        $form['background'] = [
+            '#type' => 'color',
+            '#title' => $this->t('The background of the pop-up window.'),
+            '#default_value' => '#efefef',
+        ];
 
         $form['actions']['#type'] = 'actions';
         $form['actions']['submit'] = array(

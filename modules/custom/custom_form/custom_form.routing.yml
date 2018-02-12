@@ -70,6 +70,14 @@ custom_form.form_load:
         _title: 'Ajax Load Form'
     requirements:
         _permission: 'access content'
+        
+custom_form.form_file:
+    path: '/form_file'
+    defaults:
+        _form: '\Drupal\custom_form\Form\FileForm'
+        _title: 'Files Form'
+    requirements:
+        _permission: 'access content'
  
 
     
