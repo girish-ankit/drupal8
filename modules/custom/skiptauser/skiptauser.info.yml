@@ -1,0 +1,10 @@
+name: Skipta User
+description: A module for handle user in skipta communities.
+
+# core: 8.x
+dependencies:
+  - user
+  
+core: 8.x
+package: Custom
+type: module

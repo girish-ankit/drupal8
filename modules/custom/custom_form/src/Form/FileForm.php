@@ -5,6 +5,7 @@ namespace Drupal\custom_form\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\file\Entity\File;
 
 class FileForm extends FormBase {
 
@@ -28,7 +29,7 @@ class FileForm extends FormBase {
         );
 
         $validators = array(
-            'file_validate_extensions' => array('gif png jpg jpeg pdf xls doc'),
+            'file_validate_extensions' => array('gif png jpg jpeg'),
         );
         $form['single_file'] = array(
             '#type' => 'managed_file',
@@ -37,10 +38,10 @@ class FileForm extends FormBase {
             '#required' => TRUE,
             '#title' => t('Single File'),
             '#size' => 20,
-            '#description' => t('Allowed extensions: gif png jpg jpeg pdf xls doc'),
+            '#description' => t('Allowed extensions: gif png jpg jpeg'),
             '#upload_validators' => $validators,
-           // '#theme' => 'image_widget',
-           // '#preview_image_style' => 'medium',
+            '#theme' => 'image_widget',
+            '#preview_image_style' => 'medium',
             '#upload_location' => 'public://',
         );
 
@@ -57,9 +58,7 @@ class FileForm extends FormBase {
                 'file_validate_size' => array(25600000)
             ],
             '#upload_location' => 'public://module-images/home-slider-images/',
-            '#theme' => 'image_widget',
-            '#preview_image_style' => 'medium',
-                # '#theme' => 'multiple_file_thumb_upload',
+           '#theme-wrapper' => ['ankit_file_link'],
         ];
 
         $form['actions']['#type'] = 'actions';

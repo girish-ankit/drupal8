@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_license_number
+  module:
+    - user
+id: user.user.field_license_number
+field_name: field_license_number
+entity_type: user
+bundle: user
+label: 'License Number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

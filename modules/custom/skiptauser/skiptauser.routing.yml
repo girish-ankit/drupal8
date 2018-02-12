@@ -1,0 +1,7 @@
+skiptauser.form:
+ path: '/registration'
+ defaults:
+   _title: 'Registration'
+   _form: '\Drupal\skiptauser\Form\RegForm'
+ requirements:
+   _permission: 'access content'

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_npi_number
+  module:
+    - user
+id: user.user.field_npi_number
+field_name: field_npi_number
+entity_type: user
+bundle: user
+label: 'NPI Number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
