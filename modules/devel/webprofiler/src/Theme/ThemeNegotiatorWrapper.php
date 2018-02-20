@@ -27,7 +27,7 @@ class ThemeNegotiatorWrapper extends ThemeNegotiator {
       $classResolver = $this->classResolver;
       $negotiators = $this->negotiators;
     } else {
-      $classResolver = \Drupal::classResolver();
+    //  $classResolver = \Drupal::classResolver();
       $negotiators = $this->getSortedNegotiators();
     }
 

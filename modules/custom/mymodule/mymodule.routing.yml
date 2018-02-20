@@ -7,4 +7,13 @@ mymodule.content:
         _title: 'Custom Page'
     requirements:
         _permission: 'access content'
+        
+mymodule.custom_template: 
+    path: '/custom-template'
+    defaults:
+        _controller: '\Drupal\mymodule\Controller\CustomTemplateController::content'
+        # \Drupal\[module name]\Controller\[ClassName]::[method]
+        _title: 'Custom Template'
+    requirements:
+        _permission: 'access content'
 

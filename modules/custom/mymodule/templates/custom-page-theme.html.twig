@@ -1,0 +1,24 @@
+<h2>This is custom page template</h2>
+
+<h3> Current Time: {{ "now"|date(null, "Asia/Kolkata") }}</h3> 
+
+<h3>My name is : {{ page_data.name }}</h3>
+
+<h3>My friends are: </h3>
+<ul>
+    {% for member in page_data.family %}
+        <li>{{member.firstname|e}} {{member.lastname|e}}</li>
+        {% endfor %}
+
+</ul>
+
+<h3>Check Admin: </h3>        
+
+
+{% if page_data.user.role == 'admin' %}
+    <br /><b>Hello, administrator!</b>
+{% elseif page_data.user.role == 'user' %}
+    <br /><b>Hello, user!</b>
+{% else %}
+    <br /><b>You don't have a role defined.</b>
+{% endif %}

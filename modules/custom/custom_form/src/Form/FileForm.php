@@ -29,37 +29,28 @@ class FileForm extends FormBase {
         );
 
         $validators = array(
-            'file_validate_extensions' => array('gif png jpg jpeg'),
+            'file_validate_extensions' => array('gif png jpg jpeg pdf xls doc'),
         );
-        $form['single_file'] = array(
+       
+
+        $form['File'] = array(
             '#type' => 'managed_file',
-            '#name' => 'name_single_file',
-            '#multiple' => FALSE,
-            '#required' => TRUE,
-            '#title' => t('Single File'),
-            '#size' => 20,
-            '#description' => t('Allowed extensions: gif png jpg jpeg'),
+            '#title' => t('Choose  File'),
+            '#upload_location' => 'public://MyFilesFolder/',
+            '#multiple' => TRUE,
+           // '#default_value' => $entity->get('File')->value,
+            '#default_value'=> 25,
+            '#description' => t('upload file'),
             '#upload_validators' => $validators,
-            '#theme' => 'image_widget',
-            '#preview_image_style' => 'medium',
-            '#upload_location' => 'public://',
+            '#theme'=> 'abc_thumb_upload',
+            '#states' => array(
+                'visible' => array(
+                    ':input[name="File_type"]' => array('value' => t('Upload Your File')),
+                ),
+            ),
         );
 
-        $form['mainslider_slide_one'] = [
-            '#title' => t('Multiple Files'),
-            '#type' => 'managed_file',
-            '#name' => 'multi_file',
-            '#multiple' => TRUE,
-            '#required' => TRUE,
-            '#description' => t('Allowed extensions: gif png jpg jpeg pdf xls doc'),
-            '#upload_validators' => [
-                'file_validate_is_image' => array(),
-                'file_validate_extensions' => array('gif png jpg jpeg pdf xls doc'),
-                'file_validate_size' => array(25600000)
-            ],
-            '#upload_location' => 'public://module-images/home-slider-images/',
-           '#theme-wrapper' => ['ankit_file_link'],
-        ];
+       
 
         $form['actions']['#type'] = 'actions';
         $form['actions']['submit'] = array(
@@ -71,16 +62,18 @@ class FileForm extends FormBase {
     }
 
     public function validateForm(array &$form, FormStateInterface $form_state) {
+        /*
+          if ($form_state->getValue('my_file') == NULL) {
+          $form_state->setErrorByName('my_file', $this->t('File.'));
+          }
 
-        if ($form_state->getValue('my_file') == NULL) {
-            $form_state->setErrorByName('my_file', $this->t('File.'));
-        }
+          $managedFileId_imageOne = $form_state->getValue(['mainslider_slide_one' => 'image_dir']);
 
-        $managedFileId_imageOne = $form_state->getValue(['mainslider_slide_one' => 'image_dir']);
-
-        if (empty($managedFileId_imageOne)) {
-            $form_state->setErrorByName('test', 'No image found for image one');
-        }
+          if (empty($managedFileId_imageOne)) {
+          $form_state->setErrorByName('test', 'No image found for image one');
+          }
+         * 
+         */
     }
 
     public function submitForm(array &$form, FormStateInterface $form_state) {
