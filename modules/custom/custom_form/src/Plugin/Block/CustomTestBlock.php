@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\custom_form\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
@@ -19,15 +20,34 @@ use Drupal\Core\Block\BlockBase;
  * )
  */
 
-class CustomTestBlock extends  BlockBase{
-	
-	/**
-	 * {@inheritdoc}
-	 */
-	public function build() {
-		return array(
-				'#markup' => $this->t('Jai Shri Ram!'),
-		);
-	}
-	
+class CustomTestBlock extends BlockBase {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function build() {
+
+        // without theme function code is commented
+        // 
+//        return array(
+//            '#markup' => $this->t('Check data'),
+//        );
+        // theme function for block
+        return array(
+            '#theme' => 'custom_block_template',
+            '#title' => 'Block Title',
+            '#description' => 'Block Description',
+            '#data' => $this->getData(),
+        );
+    }
+
+    private function getData() {
+
+        $data = array(
+            'myarray' => array('name' => 'ankit', 'age' => 30, 'village' => 'Morhar', 'pincode' => '843125'),
+        );
+
+        return $data;
+    }
+
 }

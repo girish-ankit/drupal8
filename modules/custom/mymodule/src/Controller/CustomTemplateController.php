@@ -38,10 +38,9 @@ class CustomTemplateController extends ControllerBase {
                     'lastname' => 'kumari'
                 )
             ),
-            'myarray' => array('name' => 'ankit', 'age' => 30, 'village' => 'Morhar', 'pincode' => '843125'),
             'user' => array('role' => 'admin')
         );
-        
+
         return $data;
     }
 
