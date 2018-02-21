@@ -3,10 +3,12 @@
 function custom_form_theme() {
     return array(
         'abc_thumb_upload' => array('render element' => 'element'),
+        
         'custom_block_template' => array(
             'variables' => array('title' => null, 'description' => null, 'data' => null),
             'template' => 'custom-block-template',
         ),
+         'add_contact_form' => array('render element' => 'form', 'template' => 'add-contact-form',),
     );
 }
 

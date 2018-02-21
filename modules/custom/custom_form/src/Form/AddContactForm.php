@@ -53,6 +53,7 @@ class AddContactForm extends FormBase {
             '#type' => 'submit',
             '#value' => t('Add'),
         );
+        $form['#theme'] = 'add_contact_form';
         return $form;
     }
 

@@ -1,0 +1,8 @@
+<?php
+
+function custom_menu_theme() {
+
+    return array(
+        'resume_form' => array('render element' => 'form', 'template' => 'resume-form',),
+    );
+}
