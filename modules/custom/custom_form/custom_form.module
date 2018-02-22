@@ -9,6 +9,8 @@ function custom_form_theme() {
             'template' => 'custom-block-template',
         ),
          'add_contact_form' => array('render element' => 'form', 'template' => 'add-contact-form',),
+         
+       
     );
 }
 

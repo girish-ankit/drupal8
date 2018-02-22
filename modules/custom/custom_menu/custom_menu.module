@@ -4,5 +4,10 @@ function custom_menu_theme() {
 
     return array(
         'resume_form' => array('render element' => 'form', 'template' => 'resume-form',),
+        
+        'header_section_template' => array(
+            'variables' => array('title' => null, 'header' => null),
+            'template' => 'header-section-template',
+        ),
     );
 }
