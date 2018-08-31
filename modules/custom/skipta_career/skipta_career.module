@@ -1,0 +1,321 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\CloseModalDialogCommand;
+use Drupal\Core\Ajax\RedirectCommand;
+use Drupal\Core\Url;
+use \Drupal\file\Entity\File;
+use Drupal\Core\Datetime\DateTimePlus;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\node\Entity\Node;
+use Drupal\image\Entity\ImageStyle;
+
+
+/**
+ * Implements hook_form_alter().
+ * Altering news add node form
+ */
+function skipta_career_form_node_career_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+     $form['field_job_posted_date']['widget'][0]['value']['#default_value'] = DrupalDateTime::createFromTimestamp(time());
+
+}
+
+/**
+ * Implementation of hook_theme() function.
+ * @param type $existing
+ * @param type $type
+ * @param type $theme
+ * @param type $path
+ * @return array
+ */
+function skipta_career_theme($existing, $type, $theme, $path) {
+  return [
+      'career_landing_page' => [
+          'variables' => ['data' => NULL],
+          'template' => 'career-landing-page',
+      ],
+      'career_listing_page' => [
+          'variables' => ['career_id' => NULL, 'keyword' => NULL],
+          'template' => 'career-listing-page',
+      ],
+      'career_search_form' => [
+          'render element' => 'form',
+          'template' => 'career-search-form',
+      ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ * Setting variable for news listing.
+ */
+function skipta_career_preprocess_career_listing_page(&$variables) {
+
+  $data = [];
+  $nid = $variables['career_id'];
+  $node = Node::load($nid);
+
+  /* Skipta Search implemenation start */
+  if(isset($variables['keyword'])) {
+    $keyword = $variables['keyword'];
+  }
+  else {
+    $keyword = NULL;
+  }
+  /* Skipta Search implemenation end */
+
+  $variables = get_career_data($node, $keyword);
+}
+
+/**
+ * Implements hook_entity_presave().
+ * Setting news logo path in form.
+ */
+function skipta_career_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  switch ($entity->bundle()) {
+    case 'career':
+
+      $city = $entity->field_job_city->value;
+      $state = $entity->field_job_state->value;
+      $country = $entity->field_job_country->value;
+
+      if ($city && $city && $country) {
+        $data = skipta_get_geo_info(NULL, $city, $state, $country);
+        $entity->field_job_latitude->value = $data['lat'];
+        $entity->field_job_longitude->value = $data['long'];
+        $entity->field_job_zip->value = $data['zip'];
+        $entity->field_job_source->value = $data['address'];
+      }
+
+      // if (!$entity->id()) {
+      $title = $entity->get('title')->value;
+      $speciality_data = get_speciality_by_title($title);
+      //dpm($speciality_data);
+
+      if (count($speciality_data) > 0) {
+
+        $speciality_value = [];
+        foreach ($speciality_data as $value) {
+          $speciality_value[] = ['value' => $value];
+        }
+        // dpm($speciality_value);
+        $entity->set('field_job_speciality', $speciality_value);
+      }
+      //  }
+
+      break;
+  }
+}
+
+function get_speciality_by_title($title) {
+  $returnValue = [];
+  $specialityaray = explode("-", $title);
+
+  foreach ($specialityaray as $eachspeciality) {
+    $result1 = check_speciality($eachspeciality);
+    if (!empty($result1)) {
+      $returnValue[] = $result1;
+    } else {
+      $innerspec = explode(" ", $eachspeciality);
+      foreach ($innerspec as $row) {
+        $result2 = check_speciality($row);
+        if (!empty($result2)) {
+          $returnValue[] = $result2;
+        } else {
+          $slashinn = explode("/", $row);
+          foreach ($slashinn as $slasrow) {
+            $result3 = check_speciality($slasrow);
+            if (!empty($result3)) {
+              $returnValue[] = $result3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  $return_data = [];
+  foreach ($returnValue as $value) {
+    foreach ($value as $inner_value) {
+      $return_data[] = $inner_value;
+    }
+  }
+
+
+  $result = array_unique($return_data);
+  return $result;
+}
+
+function check_speciality($eachspeciality) {
+
+  $matches = [];
+  $string = substr($eachspeciality, 0, 4);
+  $query = \Drupal::database()->select('taxonomy_term_field_data', 'tfd');
+  $query->fields('tfd', ['name']);
+  $query->condition('tfd.vid', 'job_speciality');
+  $query->condition('tfd.name', '%' . $string . '%', 'LIKE');
+  $result = $query->execute();
+  foreach ($result as $row) {
+    $matches[] = $row->name;
+  }
+
+  return $matches;
+}
+
+function get_career_partner_logo($nid) {
+  $logo_url = '/' . drupal_get_path('module', 'skipta_career') . '/images/poweredbyskipta.png';
+  if (!is_null($nid) && is_numeric($nid)) {
+    $node = Node::load($nid);
+    if ($node) {
+      if ($node->bundle() == 'career_partners') {
+        if (!$node->get('field_career_partner_logo')->isEmpty()) {
+          $source_logo_url = $node->field_career_partner_logo->entity->getFileUri();
+          $logo_url = ImageStyle::load('career_partner_logo')->buildUrl($source_logo_url);
+        }
+      }
+    }
+  }
+  return $logo_url;
+}
+
+function get_career_data($node, $keyword = NULL) {
+  $variables = [];
+   
+  //dpm($node); 
+  $variables['nid'] = $node->get('nid')->value;
+  $variables['title'] = $node->get('title')->value;
+
+  $variables['description'] = trim($node->get('field_job_description')->value);
+
+  $sort_description = skipta_core_truncate_word($node->get('field_job_description')->value);
+  $variables['sort_description'] = $sort_description['description'];
+
+  if($sort_description['readmore'] == 1) {
+    $variables['readmore'] = 1;
+  }
+
+  /* Skipta Search implemenation start */
+  if(!empty($keyword)) {
+    $search_description = search_excerpt($keyword, $node->get('field_job_description')->value, $langcode = NULL);
+    $variables['search_description'] = $search_description['#markup'];
+  }
+  /* Skipta Search implemenation end */
+
+  $variables['job_url_external'] = $node->get('field_job_url')->getString();
+  $variables['job_position'] = $node->get('field_job_position')->value;
+  $variables['job_id'] = $node->get('field_job_id')->value;
+  $variables['employer_name'] = $node->get('field_job_employer_name')->value;
+  $partner_id = $node->get('field_job_partner_id')->target_id;
+  //dpm($partner_id);
+  
+  if ($partner_id) {
+     $variables['partner_logo_url'] = get_career_partner_logo($partner_id);
+  } else {
+    $variables['partner_logo_url'] = get_career_partner_logo('');
+  }
+
+  $location = [];
+
+  if (!$node->get('field_job_city')->isEmpty()) {
+    $location[] = $node->get('field_job_city')->value;
+  }
+  if (!$node->get('field_job_state')->isEmpty()) {
+    $location[] = $node->get('field_job_state')->value;
+  }
+  if (!$node->get('field_job_country')->isEmpty()) {
+    $location[] = $node->get('field_job_country')->value;
+  }
+  if (!$node->get('field_job_zip')->isEmpty()) {
+    $location[] = $node->get('field_job_zip')->value;
+  }
+
+  $variables['location'] = implode(", ", $location);
+
+  if (!$node->get('field_job_additional_information')->isEmpty()) {
+    $variables['additional_information'] = $node->get('field_job_additional_information')->value;
+  } else {
+    $variables['additional_information'] = 'Learn more &amp; Apply';
+  }
+
+
+
+  $path = '/node/' . $node->get('nid')->value;
+  $variables['job_url'] = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+  $interval_time = time() - $node->get('field_job_posted_date')->value;
+  $variables['interval_time'] = \Drupal::service('date.formatter')->formatInterval($interval_time, $granularity = 1, $langcode = NULL);
+  
+  // variables for admin actions for posts
+  $variables['post_classes'] = ""; // pass class names with space between each class name(string). 
+  $variables['post_actions'] = []; // Array of actions. 
+  // fetch admin actions using 'skipta_admin_actions' action module if install
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('skipta_admin_actions')){
+    $entity_id = $node->id();
+    $entity_type = $node->bundle();
+    $entity_bundle = $node->getEntityTypeId();
+    $variables['post_classes'] = skipta_admin_actions_post_classes($entity_id, $entity_type, $entity_bundle); // pass class names with space between each class name(string). 
+    $variables['post_actions'] = skipta_admin_actions_post_actions($entity_id, $entity_type, $entity_bundle); // Array of actions. 
+  }
+  
+  return $variables;
+}
+
+function skipta_get_geo_info($address = NULL, $city = NULL, $state = NULL, $country = NULL) {
+  $location = [];
+
+  if ($address) {
+    $address = trim($address);
+    $address = str_replace(' ', '+', $address);
+    $location[] = $address;
+  }
+  if ($city) {
+    $city = trim($city);
+    $city = str_replace(' ', '+', $city);
+    $location[] = $city;
+  }
+  if ($state) {
+    $state = trim($state);
+    $state = str_replace(' ', '+', $state);
+    $location[] = $state;
+  }
+  if ($country) {
+    $country = trim($country);
+    $country = str_replace(' ', '+', $country);
+    $location[] = $country;
+  }
+
+  $location_string = implode(',', $location);
+
+  $api_key = \Drupal::config('google.api_key')->get('value', FALSE);
+
+
+  $url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $location_string . '&key=' . $api_key;
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_PROXYPORT, 3128);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  $response = curl_exec($ch);
+  curl_close($ch);
+  $decoded_json = json_decode($response);
+
+  $lat = $decoded_json->results[0]->geometry->location->lat;
+  $long = $decoded_json->results[0]->geometry->location->lng;
+  $zip = '';
+  foreach ($decoded_json->results as $results) {
+
+    foreach ($results->address_components as $address_components) {
+      // Check types is set then get first element (may want to loop through this to be safe,
+      // rather than getting the first element all the time)
+      if (isset($address_components->types) && $address_components->types[0] == 'postal_code') {
+        // Do what you want with data here
+        $zip = $address_components->long_name;
+      }
+    }
+  }
+
+  return ['lat' => $lat, 'long' => $long, 'zip' => $zip, 'address' => $location_string];
+}

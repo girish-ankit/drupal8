@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Job Speciality'
+vid: job_speciality
+description: 'This taxonomy is used to for job content type'
+hierarchy: 0
+weight: 0

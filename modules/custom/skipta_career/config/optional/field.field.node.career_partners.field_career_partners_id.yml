@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_career_partners_id
+    - node.type.career_partners
+id: node.career_partners.field_career_partners_id
+field_name: field_career_partners_id
+entity_type: node
+bundle: career_partners
+label: 'Career Partners Id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

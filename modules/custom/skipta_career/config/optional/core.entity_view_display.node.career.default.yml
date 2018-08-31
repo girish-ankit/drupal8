@@ -1,0 +1,225 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.career.field_job_additional_information
+    - field.field.node.career.field_job_categories
+    - field.field.node.career.field_job_city
+    - field.field.node.career.field_job_contact_information
+    - field.field.node.career.field_job_country
+    - field.field.node.career.field_job_description
+    - field.field.node.career.field_job_employer_email
+    - field.field.node.career.field_job_employer_email2
+    - field.field.node.career.field_job_employer_name
+    - field.field.node.career.field_job_id
+    - field.field.node.career.field_job_is_websnippet
+    - field.field.node.career.field_job_latitude
+    - field.field.node.career.field_job_longitude
+    - field.field.node.career.field_job_network_id
+    - field.field.node.career.field_job_partner_id
+    - field.field.node.career.field_job_position
+    - field.field.node.career.field_job_posted_date
+    - field.field.node.career.field_job_snippet_description
+    - field.field.node.career.field_job_snippet_thumbnail
+    - field.field.node.career.field_job_snippet_title
+    - field.field.node.career.field_job_source
+    - field.field.node.career.field_job_speciality
+    - field.field.node.career.field_job_state
+    - field.field.node.career.field_job_url
+    - field.field.node.career.field_job_zip
+    - node.type.career
+  module:
+    - image
+    - text
+    - user
+id: node.career.default
+targetEntityType: node
+bundle: career
+mode: default
+content:
+  field_job_additional_information:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_job_categories:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_city:
+    weight: 7
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_contact_information:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_job_country:
+    weight: 19
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_description:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_job_employer_email:
+    weight: 21
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_employer_email2:
+    weight: 22
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_employer_name:
+    weight: 20
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_is_websnippet:
+    weight: 12
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_job_latitude:
+    weight: 10
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_longitude:
+    weight: 11
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_position:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_posted_date:
+    weight: 1
+    label: inline
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_job_snippet_description:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_job_snippet_thumbnail:
+    weight: 14
+    label: inline
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_job_snippet_title:
+    weight: 13
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_source:
+    weight: 6
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_speciality:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_state:
+    weight: 8
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_url:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_job_zip:
+    weight: 9
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_job_id: true
+  field_job_network_id: true
+  field_job_partner_id: true

@@ -1,0 +1,12 @@
+name: Skipta Career
+type: module
+description: 'This module contains functionality related to career section.'
+package: Skipta
+dependencies:
+  - skipta_core
+  
+# Information added by Ankit Kumar packaging script on 2018-28-02
+version: '8.x-1.1'
+core: '8.x'
+project: 'skipta_career'
+datestamp: 1519821026

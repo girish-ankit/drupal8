@@ -1,0 +1,40 @@
+skipta_career.landing: 
+    path: '/career'
+    defaults:
+        _controller: '\Drupal\skipta_career\Controller\CareerLandingPageController::content'
+        _title: 'Career Feed'
+    requirements:
+         _permission: 'view career landing page'
+         
+skipta_career.autocomplete:
+  path: '/career-search-autocomplete/{field_name}/{count}'
+  defaults:
+    _controller: '\Drupal\skipta_career\Controller\CareerAutocompleteController::handleAutocomplete'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+skipta_career.partnerid:
+  path: '/partner-id'
+  defaults:
+    _controller: '\Drupal\skipta_career\Controller\CareerPartnerIdController::handleAutocomplete'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+    
+skipta_career.processjob:
+  path: '/Common/ProcessHecJob'
+  defaults:
+    _controller: '\Drupal\skipta_career\Controller\ProcessJobController::content'
+    _title: 'Process Job'
+  requirements:
+    _access: 'TRUE'
+    
+skipta_career.processtesting:
+  path: '/job-test'
+  defaults:
+    _controller: '\Drupal\skipta_career\Controller\ProcessTestController::content'
+    _title: 'Process Job'
+  requirements:
+    _access: 'TRUE'
+        
+

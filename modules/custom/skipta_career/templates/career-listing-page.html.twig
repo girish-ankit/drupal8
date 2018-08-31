@@ -1,0 +1,67 @@
+{# career listing html#}
+<div class="stream-posts {{ post_classes }}" id="node-{{ nid }}">
+  <div class="stream__wrapper intream__career">
+    <div class="stream__content">
+      <div class="instream__post">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+          <div class="user__image">
+            <img src="/modules/custom/skipta_career/images/DU_logo.png" alt="Profile Image" class="user__img">
+            <!--<span class="triangle triangle-white"></span>-->
+          </div>
+          <div class="user__metainfo">
+            <h4 class="career__post">
+              {{ title }}
+            </h4>
+            <span class="c_post_id"> - {{ job_id }}</span>
+            <span class="c_post_time"> {{ job_position }}</span>
+          </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-right date__wrapper">
+              <span class="post__date">{{ interval_time }}</span>
+              <div class="dropdown pull-right">
+                <button class="dashboard__button dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <i class="glyphicon glyphicon-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    {% if post_actions|length > 0 %}
+                      {% for list in post_actions %}
+                        <li><a href="{{ list.action_url }}" class="{{ list.class }}" data-dialog-type="{{ list.modal_box }}" data-entity-id="{{ list.entity_id }}" data-entity-type="{{ list.entity_type }}" data-entity-bundle="{{ list.entity_bundle }}">{{ list.name }}</a></li>
+                      {% endfor %}
+                    {% else %}
+                      <li><a href="#">No Action Found</a></li>
+                    {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="career__description">
+          <div class="left">
+            <p class="info">
+              {% if search_description %}
+                  {{ search_description|raw }}
+                {% else %}
+                  {{ sort_description|raw }}
+                {% endif %}
+            </p>
+          </div>
+          <div class="right">
+            <div class="organisation"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><p class="details"> {{ employer_name }}</p></div>
+            <div class="location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><p class="details"> {{ location }}</p></div>
+          </div>
+        </div>  
+        <div class="apply__logo"> 
+          {% if readmore == 1 %}
+            <p><a href="{{ job_url }}" class="read_more"> Read More</a></p>
+          {% endif %}
+          <a href="{{job_url_external }}" target="_blank">
+            <button class="btn btn-sm btn-primary"> {{ additional_information|raw}} </button></a>
+          <p class="logo"> Powered by <a href="{{job_url_external }}" target="_blank"><img src="{{ partner_logo_url}}" alt="slogan" class="img-responsive powred-by"></a></p>
+        </div>                              
+      </div>
+    </div>
+  </div>
+</div>
+{# career listing html#}

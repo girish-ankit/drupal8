@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: career_partner_logo
+label: 'Career Partner logo'
+effects:
+  06a3468b-a487-4ca5-ac0c-153a4eddfd2c:
+    uuid: 06a3468b-a487-4ca5-ac0c-153a4eddfd2c
+    id: image_scale
+    weight: 1
+    data:
+      width: 120
+      height: 28
+      upscale: true

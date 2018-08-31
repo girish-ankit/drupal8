@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: career_url_alias
+label: 'Career Url Alias'
+type: 'canonical_entities:node'
+pattern: 'careers/[node:nid]'
+selection_criteria:
+  d9b831a0-45f5-4d9f-95f9-e9e563c7bc99:
+    id: node_type
+    bundles:
+      career: career
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d9b831a0-45f5-4d9f-95f9-e9e563c7bc99
+selection_logic: and
+weight: -5
+relationships: {  }

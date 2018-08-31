@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_is_websnippet
+    - node.type.career
+id: node.career.field_job_is_websnippet
+field_name: field_job_is_websnippet
+entity_type: node
+bundle: career
+label: 'Job Is WebSnippet'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

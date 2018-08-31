@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.career_partners
+  module:
+    - user
+id: node.career_partners.teaser
+targetEntityType: node
+bundle: career_partners
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden: {  }

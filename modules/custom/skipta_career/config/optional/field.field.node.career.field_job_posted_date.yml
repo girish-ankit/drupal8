@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_posted_date
+    - node.type.career
+id: node.career.field_job_posted_date
+field_name: field_job_posted_date
+entity_type: node
+bundle: career
+label: 'Job Posted Date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1521817023
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

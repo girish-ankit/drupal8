@@ -1,0 +1,18 @@
+skipta-career-js:
+  version: 1.x
+  js:
+    js/skipta_career.js: {}
+  dependencies:
+    - core/jquery
+
+career-infinite-scroll-js:
+  version: 1.x
+  js:
+    js/career-infinite-scroll.js: {}
+  dependencies:
+    - core/jquery
+    
+skipta-career-css:
+  css:
+    theme:
+      css/skipta_career.css: {}

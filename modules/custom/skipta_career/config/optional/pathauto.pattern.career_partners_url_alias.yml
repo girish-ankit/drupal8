@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: career_partners_url_alias
+label: 'Career Partners Url Alias'
+type: 'canonical_entities:node'
+pattern: 'career-partner/[node:nid]'
+selection_criteria:
+  93579716-46e9-4bb9-a411-d791d5c44536:
+    id: node_type
+    bundles:
+      career_partners: career_partners
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 93579716-46e9-4bb9-a411-d791d5c44536
+selection_logic: and
+weight: -5
+relationships: {  }

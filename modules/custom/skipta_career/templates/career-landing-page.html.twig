@@ -1,0 +1,31 @@
+{% if data.default == 0 %}
+  <div id="skipta-career-wrapper">
+{% endif %}
+
+<div class="skipta-career"  data-cnt="{{data.record_cnt}}" data-ajax="{{data.default}}">
+  {% if data.careers|length > 0 %}
+    {% for key, value in data.careers %}
+      {{ value }}
+    {% endfor %}
+  {% else %}
+    <h3>No Career Data Found</h3>
+  {% endif %}
+</div>
+{# Print pager if available #}
+{% if data.pager %}
+  {{ data.pager }}
+  {# Infinite Scroll Pager Implimentaion #}
+  <div class="infinite-scroll-pager">
+    <div class="scroller-status text-center" style="display:none;">
+      <div class="infinite-scroll-request loader-ellips"><img src="{{ data.ajax_loader_image }}" alt="Loader Image"/></div>
+      <div class="SK-eoc">
+        <p class="infinite-scroll-last">End of page.</p>
+        <p class="infinite-scroll-error">No more pages to load</p>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if data.default == 0 %}
+  </div>
+{% endif %}

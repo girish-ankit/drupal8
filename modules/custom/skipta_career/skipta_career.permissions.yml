@@ -1,0 +1,5 @@
+view career landing page:
+    title: 'View career Landing Page'
+    description: 'This is permission to view career landing page'
+    restrict access: true
+
