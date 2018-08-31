@@ -1,0 +1,5 @@
+name: surveygizmo
+type: module
+core: '8.x'
+description: 'This module is created to intgreate serverygizmo to drupal'
+package: Custom

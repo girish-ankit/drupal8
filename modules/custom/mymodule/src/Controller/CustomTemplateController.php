@@ -16,7 +16,7 @@ class CustomTemplateController extends ControllerBase {
 
         return [
             '#theme' => 'custom_page_theme',
-            '#page_data' => $this->getData(),
+            '#data' => $this->getData(),
         ];
     }
 

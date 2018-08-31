@@ -95,6 +95,8 @@ class InnerPageCaseStudy extends BlockBase {
 	$output .= '</div>';
 	$output .= '</li>';
 	return $output;
+        
+        
     }
 
 }

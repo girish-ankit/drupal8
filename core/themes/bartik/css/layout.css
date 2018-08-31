@@ -28,3 +28,38 @@
   margin-top: 20px;
   margin-bottom: 40px;
 }
+
+#custom-menu ul li.menu-icon a{
+   height: 24px;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      background-position: 3px 5px;
+      display: block;
+      padding: 4px 31px;
+      
+      color:#0f4f9e;
+      font-weight: bold;
+}
+
+#custom-menu ul li.menu-icon a:hover{
+ background-position: 3px -24px;
+ color:#8d0f0f;
+ 
+}
+#block-bartik-main-menu ul li.menu-icon a{
+   height: 24px;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      background-position: 3px 5px;
+      display: block;
+      padding: 4px 31px;
+      
+      color:#0f4f9e;
+      font-weight: bold;
+}
+
+#block-bartik-main-menu ul li.menu-icon a:hover{
+ background-position: 3px -24px;
+ color:#8d0f0f;
+ 
+}

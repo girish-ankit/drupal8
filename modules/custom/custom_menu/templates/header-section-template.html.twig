@@ -1,0 +1,57 @@
+{# Custom Heading #}
+<div id="sk-header-sectoin" sytle="background:#cccccc">
+    <p>
+        <a class="logo navbar-btn pull-left" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+            <img src="{{ header.data.logoPath }}" alt="{{ 'Home'|t }}" />
+        </a>
+
+    </p>
+    {# USER Data  #}
+
+
+    {% if header.data.user.name %}
+        <p><b>Welcome </b>{{ header.data.user.name}}</p>
+    {% endif %}
+
+    {% if header.data.user.uid %}
+        <p><b>Your User id: </b>{{ header.data.user.uid}}</p>
+    {% endif %}
+
+    {% if header.data.user.email %}
+        <p><b>Your User Email: </b>{{ header.data.user.email}}</p>
+    {% endif %}
+
+    {# Notification Data  #}
+
+    <p><b>Notication count: </b>{{ header.data.notfications|length }} </p>
+
+    <h3><b>Notificatrion List:=></b></h3>
+    <ul>
+
+
+        {% for notificaion in header.data.notfications %}
+            <li> <a href="{{notificaion.link}}"> {{ notificaion.title}}</a></li>
+            {% endfor %}
+    </ul>
+
+    {# Search Box  #}
+    {% if header.data.sarchBox %}
+     {{ header.data.sarchBox }}
+     {% endif %}
+    
+
+
+    {# Main Menu  #}
+    <div id="custom-menu">
+
+    {% if header.data.headerMenu %}
+        {{ header.data.headerMenu }}
+    {% endif %}
+    </div>
+
+
+</div>
+
+
+
+
